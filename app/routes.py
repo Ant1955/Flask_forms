@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, url_for
 from app import app
 
 posts = []
-@app.route('/blog', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 
 def index():
 #использует метод POST, так как информация будет отправляться. Request method сравнивает данные с HTTP-запросом.
