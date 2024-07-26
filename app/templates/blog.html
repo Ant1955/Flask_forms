@@ -10,31 +10,41 @@
 <body>
 <!-- создает класс container -->
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Простой блог</h1>
-        <!-- #создает форму с методом POST, чтобы отправлять данные из этой формы -->
+        <h1 class="text-center mb-4">Регистрация на сайте</h1>
+        <!-- #создает форму с методом POST, чтобы отправлять данные из этой формы
+        #создает поля: имя, город, хобби и возраст.-->
         <form method="POST" action="/">
             <div class="form-group">
-                <label for="title">Заголовок:</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+                <label for="name">Имя:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="content">Текст поста:</label>
-                <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                <label for="city">Город:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
             </div>
-            <button type="submit" class="btn btn-primary">Отправить пост</button>
+            <div class="form-group">
+                <label for="hobby">Хобби (увлечения не связанные с работой):</label>
+                <textarea class="form-control" id="hobby" name="hobby" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            <button type="submit" class="btn btn-primary">Отправить анкету</button>
         </form>
         <hr>
        <!-- #использует цикл for, чтобы иметь возможность публиковать посты -->
-        <h2>Посты</h2>
-        {% for post in posts %}
+        <h2>ваши данные</h2>
+       <!-- {% for post in posts %} -->
        <!-- #создает отдельный div, внутри которого записываются заголовки и текст постов -->
         <div class="card my-3">
             <div class="card-body">
-                <h4 class="card-title">{{ post.title }}</h4>
-                <p class="card-text">{{ post.content }}</p>
+                <h4 class="card-title">{{ post.name }}</h4>
+                <p class="card-text">{{ post.city }}</p>
+                <p class="card-text">{{ post.hobby }}</p>
+                <p class="card-text">{{ post.age }}</p>
             </div>
         </div>
-        {% endfor %}
+        <!-- {% endfor %} -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
